@@ -1,6 +1,8 @@
 
 # VPN Site to Site
 
+![image](image/openstack.jpg)
+
 ## 1. Definition
 
 VPC - a virtual private network is it is a network technology that allows us to set up a secure connection over a public network, for instance, the Internet.
@@ -36,6 +38,8 @@ There are some use cases/ purpose of a site-to-site VPN
 - KEYSTONE: Indentity
 
 - SWIFT: Object Storage
+
+![image](image/openstack.jpg)
 
 
 ### 1. KEYSTONE: Indentity
@@ -112,30 +116,23 @@ Each service we are talking about is a different project designed, developed and
 
 While these APIs allow each of the services to use another service, it also allows an implementer to switch out or change the internals of any service as long as they maintain the API. As you can see, each open stack project consists of various internal components that work together in harmony.
 
-Let's take Nova as an example to the outside world.
-Nova Service is a single entity and has a separate API process.
+Let's take Nova as an example to the outside world. Nova Service is a single entity and has a separate API process.
 This API process listens for API requests, free processes them and passes them on to other parts of NOVA for communication between the processes of one service and AM Cupie or Rabbitt.
 
 MQ message broker is used, for example, after the Nova API gets a request from, let's say, neutron.
 
 It passes this request to other NOVA components like Nova Conductor or compute through this message
-
 to a database is essential for storing service state as well as other runtime data and configuration.
 
 When deploying and configuring your open stack cloud, you can choose among several message broker and
-
 database solutions such as Rabbitt, MQ, MySQL, Maria DB and SQL Lite.
 
 Open stack projects share many common design patterns and implementation details, for example, the
-
 Oslo project produces a set of Python libraries containing infrastructure code shared by many open stack
-
 services.
-
 The goal by doing this is to improve consistency, quality, stability and usability of open stack code.
 
 Finally, users can access open stack via the Web based user interface implemented by Horizon via command
-
 line clients, and by issuing API requests through tools like browser plug ins or Kerl for applications.
 
 Several sticks are available.
@@ -143,46 +140,26 @@ Several sticks are available.
 Ultimately, all of these access methods issue rest API calls to the various open stack services.
 
 Before going further, I would like to talk about the ways you can reach and use open stack, whether
-
 you're an end user that needs a spin up, a VM or an administrator doing some stuff, you need to be
-
 able to reach open stack to do some configuration, provisioning, maintenance, etc..
 
 In total, we have three ways to use open stack.
 
-The first one is the horizon dashboard.
+- The horizon dashboard.
 
-It may be the simplest for basic usage of open stack.
+- Command line interface
 
-It is flexible and easy.
+- API axis
 
-You can do most of your stuff from here.
-
-The second one is the command line interface, if you're a CLIA guru or feel comfortable with Seelie,
-
-this might be the method you'll like.
-
-The last one is the API axis, which is more towards programmatic access by a third party software like
-
-a cloud management or orchestration software.
-
-The important message from this line is all those three methods use API at the back end to fulfill your
-
-demands.
-
-There is no other way around it.
-
-The Common Identity Service Keystone authenticates all services and individual services interact with
-
-each other through public APIs.
+The important message from this line is all those three methods use API at the back end to fulfill your demands.
 
 
 ## NEUTRON NETWORK
 
+### 1.
+
  And Neutron is the project under open stack tenso that provides network connectivity as a service,
-
 for instance, is running on a hypervisor, neutron abstracts, ports, networks and subnets and make
-
 those programmable with the help of APIs.
 
 It also has a plug in architecture which makes it possible to integrate open source or proprietary vendor
