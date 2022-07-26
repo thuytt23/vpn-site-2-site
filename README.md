@@ -1,7 +1,6 @@
 
 # VPN Site to Site
 
-![image](image/openstack.jpg)
 
 ## 1. Definition
 
